@@ -7,10 +7,6 @@ public class Tester : MonoBehaviour
     // whole code shouldn't be in that function, but this is for the practice
     void Start()
     {
-        int[] data = new int[10];
-        data[0] = 44;
-        data[data.Length - 1] = 15; // the last element in the array
-
         CalculateTwoNumbers(4, 8);
         print("The second calculation is " + SecondCalculation());
         print("The third calculation is " + ThirdCalculation(88, 223));
@@ -81,6 +77,20 @@ public class Tester : MonoBehaviour
             print("The last number is " + k);
             k++;
         } while (k < 10);
+
+        // arrays
+        int[] data = new int[10];
+        for (int z = 0; z < data.Length; z++)
+        {
+            data[z] = Random.Range(0, 100);
+            print("The element at index " + z + " has a value of " + data[z]);
+        }
+
+        // foreach loop
+        foreach(int num in data)
+        {
+            print("The value of the element is " + num);
+        }
     }
 
     void CalculateTwoNumbers(int a, int b)
