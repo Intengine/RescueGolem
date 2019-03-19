@@ -4,16 +4,83 @@ using UnityEngine;
 
 public class Tester : MonoBehaviour
 {
+    // whole code shouldn't be in that function, but this is for the practice
     void Start()
     {
+        int[] data = new int[10];
+        data[0] = 44;
+        data[data.Length - 1] = 15; // the last element in the array
+
         CalculateTwoNumbers(4, 8);
         print("The second calculation is " + SecondCalculation());
         print("The third calculation is " + ThirdCalculation(88, 223));
-    }
 
-    void Update()
-    {
-        
+        int a = 9;
+        int b = 6;
+        int c = 3;
+
+        if(a <= b)
+        {
+            print("A is lower than B or it is equal to B");
+        } else if(a == b)
+        {
+            print("A is equal to B");
+        } else if(a >= b)
+        {
+            print("A is greater than B or it is equal to B");
+        }
+        else
+        {
+            print("Default statement");
+        }
+
+        if(b < a && a > c) // AND
+        {
+            print("This is true");
+        }
+
+        if (b < a || a > c) // OR
+        {
+            print("This is also true");
+        }
+
+        switch (a) // another type of conditional statement
+        {
+            case 1:
+                break;
+            case 5:
+                break;
+            case 9:
+                print("A is equal to 9");
+                break;
+            default:
+                print("Default statement");
+                break;
+        }
+
+        // for loop
+        for(int i=0; i < 10; i++) // for "i" which is currently = 0, as long as "i" < 10, execute the code and increment "i"
+        {
+            print("The value of i is" + i);
+        }
+
+        // while loop
+        int j = 0;
+
+        while(j < 10)
+        {
+            print(j);
+            j++;
+        }
+
+        // do while loop
+        int k = 0;
+
+        do
+        {
+            print("The last number is " + k);
+            k++;
+        } while (k < 10);
     }
 
     void CalculateTwoNumbers(int a, int b)
