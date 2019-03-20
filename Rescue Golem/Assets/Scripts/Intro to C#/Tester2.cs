@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Tester2 : MonoBehaviour
 {
+    Player wizard = new Player(); // creating object of Player class
+
     int[] data;
 
     void Start()
@@ -13,6 +15,12 @@ public class Tester2 : MonoBehaviour
         {
             print("The value is " + data[i]);
         }
+        wizard.PlayerInfo();
+
+        wizard.name = "Knight";
+        wizard.health = 44f;
+
+        wizard.PlayerInfo();
     }
 
     int[] ProcessArrays(int[] data)
