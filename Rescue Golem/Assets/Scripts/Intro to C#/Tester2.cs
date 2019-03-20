@@ -5,6 +5,7 @@ using UnityEngine;
 public class Tester2 : MonoBehaviour
 {
     Player wizard = new Player(); // creating object of Player class
+    Player monk = new Player("Monk", 12.7f); // this is the constructor from Player class
 
     int[] data;
 
@@ -18,9 +19,14 @@ public class Tester2 : MonoBehaviour
         wizard.PlayerInfo();
 
         wizard.name = "Knight";
-        wizard.health = 44f;
+        wizard.SetHealth(44f);
+        print(wizard.GetHealth());
 
         wizard.PlayerInfo();
+        monk.PlayerInfo();
+
+        ChangePlayer(monk); // passing as a reference
+        monk.PlayerInfo();
     }
 
     int[] ProcessArrays(int[] data)
@@ -40,5 +46,11 @@ public class Tester2 : MonoBehaviour
             data[i] = Random.Range(0, 100);
             print("The value is " + data[i]);
         }
+    }
+
+    // passing values and references to function parameters
+    void ChangePlayer(Player enemy)
+    {
+        enemy.name = "Vargas";
     }
 }
