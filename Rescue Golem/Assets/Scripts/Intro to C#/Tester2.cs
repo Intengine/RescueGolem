@@ -7,6 +7,8 @@ public class Tester2 : MonoBehaviour
     Player wizard = new Player(); // creating object of Player class
     Player monk = new Player("Monk", 12.7f); // this is the constructor from Player class
 
+    private Wizard necromant;
+
     int[] data;
 
     void Start()
@@ -18,7 +20,7 @@ public class Tester2 : MonoBehaviour
         }
         wizard.PlayerInfo();
 
-        wizard.name = "Knight";
+        wizard.Name = "Knight";
         wizard.SetHealth(44f);
         print(wizard.GetHealth());
 
@@ -27,6 +29,15 @@ public class Tester2 : MonoBehaviour
 
         ChangePlayer(monk); // passing as a reference
         monk.PlayerInfo();
+
+        Wizard w = new Wizard("Gandalf", 33.7f); // wizard from Wizard class
+
+        w.PlayerInfo();
+        w.Attack(); // overrided function
+
+        // using GameObject class (from MonoBehaviour) and its Find function passing the name of the game object that we want to find
+        // that function finding it at the Hierarchy panel in Unity and return (by GetComponent) Wizard generic component
+        necromant = GameObject.Find("Player").GetComponent<Wizard>();
     }
 
     int[] ProcessArrays(int[] data)
@@ -51,6 +62,6 @@ public class Tester2 : MonoBehaviour
     // passing values and references to function parameters
     void ChangePlayer(Player enemy)
     {
-        enemy.name = "Vargas";
+        enemy.Name = "Vargas";
     }
 }

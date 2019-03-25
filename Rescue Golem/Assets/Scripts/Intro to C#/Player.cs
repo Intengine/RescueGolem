@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player
+public class Player : MonoBehaviour
 {
     private float health = 100f;
-    public string name = "Wizard";
+    private string name = "Wizard";
 
     // constructor
     public Player()
@@ -45,6 +45,24 @@ public class Player
         {
             health = value;
         }
+    }
+
+    public string Name
+    {
+        get
+        {
+            return name;
+        }
+
+        set
+        {
+            name = value;
+        }
+    }
+
+    public virtual void Attack()
+    {
+        Debug.Log("Player is attacking");
     }
 
     public void PlayerInfo()
