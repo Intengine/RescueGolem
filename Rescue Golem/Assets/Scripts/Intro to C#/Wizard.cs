@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Wizard : Player // inheriting from Player class
 {
+    public static int power = 100; // a static variable, so called a "class variable"
+
     public Wizard()
     {
 
